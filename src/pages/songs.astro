@@ -1,0 +1,26 @@
+---
+import Listshelf from '../components/Listshelf.astro';
+import Layout from '../layouts/Layout.astro';
+const data = await fetch("https://gpibpwcilnnywtjvpwql.supabase.co/rest/v1/lovehitshardsongs",{
+    method: "GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwaWJwd2NpbG5ueXd0anZwd3FsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM0ODA5NDUsImV4cCI6MjA0OTA1Njk0NX0.lELSDio-MneQx9v3lKWbxjgNLEetUR_wd80fE7CnM0U"
+    }
+}).then(res=>res.json());
+console.log(data);
+
+
+---
+
+
+
+	<Layout title="Songs">
+		<section class="songs">
+        {
+            data.map((song)=>{
+            return <Listshelf data={song}/>;
+        })
+        }
+    </section>
+	</Layout>
+    

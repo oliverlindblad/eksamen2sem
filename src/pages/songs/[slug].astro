@@ -1,0 +1,233 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+
+export async function  getStaticPaths(){
+    const data = await fetch(
+        "https://gpibpwcilnnywtjvpwql.supabase.co/rest/v1/lovehitshardsongs",
+    {
+    method: "GET",
+    headers: {
+        apikey: 
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdwaWJwd2NpbG5ueXd0anZwd3FsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM0ODA5NDUsImV4cCI6MjA0OTA1Njk0NX0.lELSDio-MneQx9v3lKWbxjgNLEetUR_wd80fE7CnM0U"
+    },
+}
+).then(response => response.json());
+
+    return data.map((song) => {
+        return {
+            params: { slug: song.slug },
+            props: { myData:song },
+        };
+     });
+}
+    const {myData} = Astro.props
+    console.log(myData);
+
+---
+
+<Layout title={myData.name1}>
+
+      <div class="container">
+    <!-- Background Image -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Content Section -->
+    <div class="details">
+        <!-- Album Art -->
+        <img 
+            src={`https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/${myData.image}`} 
+            alt={myData.name1} 
+            class="album-art"
+        />
+        
+        <!-- Song Details -->
+        <div class="text">
+            <h2 class="song-title">{myData.name1}</h2>
+            <h4 class="artist-name">lovehitshard</h4>
+        </div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="audio-player" controls autoplay>
+        <source 
+            src={`https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/${myData.sound}`} 
+            type="audio/mpeg" 
+        />
+      
+    </audio>
+</div>
+
+
+<div class="icons">
+    <!-- Go Back Arrow -->
+    <div class="icon" onclick="window.history.back()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+        </svg>
+    </div>
+
+    <!-- Spotify Icon -->
+    <div class="icon">
+        <a href="https://open.spotify.com/artist/0I4QYEdFKnRDWft67BvRCf" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0zm5.29 17.32a.85.85 0 0 1-1.15.28 11.06 11.06 0 0 0-6.68-1.6 9.56 9.56 0 0 0-2.27.64.85.85 0 0 1-.92-1.43 10.83 10.83 0 0 1 8.64-1.74 9.07 9.07 0 0 1 2.55.9.85.85 0 0 1 .28 1.15zm.85-3.05a.65.65 0 0 1-.88.21 10.83 10.83 0 0 0-7.88-1.85 9.07 9.07 0 0 0-2.66.82.65.65 0 0 1-.66-1.13 10.75 10.75 0 0 1 8.56-1.62 8.73 8.73 0 0 1 2.38.79.65.65 0 0 1 .21.88zm1.58-2.8a.5.5 0 0 1-.67.16 12.23 12.23 0 0 0-8.61-2.12 9.54 9.54 0 0 0-2.8.86.5.5 0 0 1-.51-.86 11.92 11.92 0 0 1 9.27-2.15 8.36 8.36 0 0 1 2.77.85.5.5 0 0 1 .15.67z" />
+            </svg>
+        </a>
+    </div>
+
+    <!-- SoundCloud Icon -->
+    <div class="icon">
+        <a href="https://soundcloud.com/lovehitshard" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20.55 11.39a.44.44 0 0 1 .44.44v1.5a.44.44 0 0 1-.44.45h-.63v.05h.63a2.62 2.62 0 0 0 2.63-2.64 2.63 2.63 0 0 0-2.63-2.63 4.06 4.06 0 0 0-3.43 1.84l-.07.1a6.93 6.93 0 0 0-4.55-1.65 7.2 7.2 0 0 0-5 2.07A7.17 7.17 0 0 0 5 16.09a7.14 7.14 0 0 0 7.21 1.84h8.35a.44.44 0 0 0 0-.89h-8.3a6.29 6.29 0 0 1-4.7-2.22 5.5 5.5 0 0 1-.1-6.84 5.45 5.45 0 0 1 3.95-1.71 6 6 0 0 1 4.31 1.71 4.64 4.64 0 0 1 .47.55h-.06A3.15 3.15 0 0 1 17 11.4a3.06 3.06 0 0 1 .1-.76 4.05 4.05 0 0 1 3.45-2.4z" />
+            </svg>
+        </a>
+    </div>
+</div>
+
+
+
+
+    <script>
+        document.addEventListener('keydown', (event) => {
+            // Check if the key pressed is the spacebar
+            if (event.code === 'Space') {
+                event.preventDefault(); // Prevent default spacebar scroll behavior
+                const audio = document.getElementById('audio-player');
+                if (audio) {
+                    if (audio.paused) {
+                        audio.play(); // Play the audio if paused
+                    } else {
+                        audio.pause(); // Pause the audio if playing
+                    }
+                }
+            }
+        });
+    </script>
+
+        
+</Layout>
+
+<style>
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: blue; /* Fallback for unsupported browsers */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fullscreen Container */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+/* Background Image Styling */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/default-image.jpg') no-repeat center center/cover;
+    filter: blur(20px) brightness(0.5); /* Blur and dim for Spotify effect */
+    z-index: -1;
+}
+
+/* Album Art, Song Title, and Artist Container */
+.details {
+    position: absolute;
+    bottom: 150px; /* Adjusted for spacing */
+    left: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 80%; /* Ensure content doesn't overflow */
+}
+
+/* Album Art */
+.album-art {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Text Details (Song Title and Artist) */
+.text {
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+}
+
+.song-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.artist-name {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin: 5px 0 0;
+}
+
+/* Audio Controls */
+audio {
+    position: absolute;
+    bottom: 20px; /* Adjusted for spacing */
+    left: 20px;
+    width: 90%; /* Full width with some padding */
+    max-width: 800px; /* Limit width for larger screens */
+    background: #222;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+
+
+.icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column; /* Arrange icons vertically */
+    align-items: center; /* Center align each icon */
+    gap: 15px; /* Spacing between icons */
+    z-index: 2;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+}
+
+.icon svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+
+</style>

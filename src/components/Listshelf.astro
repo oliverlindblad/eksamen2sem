@@ -1,14 +1,26 @@
 ---
+const {data} = Astro.props;
 
 ---
+
+<a href={`songs/${data.slug}`}>
+    <article>
+        <img src="" alt="billede" />
+        <h2>{data.name1}</h2>
+        <h3>{data.date}</h3>
+        <h4>{data.time}</h4>
+    </article>
+</a>
+
+
+
+
+   
 
 
 
 
 <style>
-	
-
-	
 	@media screen and (max-width: 768px) {
 
 	}
