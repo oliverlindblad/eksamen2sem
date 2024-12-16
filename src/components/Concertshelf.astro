@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="concert-meta">
                      <span class="concert-year">Drejecocktail</span>
                     <span class="concert-year">Copenhagen</span>
-                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" class="concert-time">BUY TICKETS</a>
+                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" target="_blank" class="concert-time">BUY TICKETS</a>
                 </div>
             </div>
         </div>
@@ -22,9 +22,9 @@ import Layout from '../layouts/Layout.astro';
             <div class="concert-info">
                 <h2 class="concert-name">09. Jan</h2>
                 <div class="concert-meta">
-                     <span class="concert-year">Jyske Bank Boxen</span>
-                    <span class="concert-year">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Herning</span>
-                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" class="concert-time">BUY TICKETS</a>
+                     <span class="concert-year">Boxen</span>
+                    <span class="concert-year">Herning</span>
+                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" target="_blank" class="concert-time">BUY TICKETS</a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="concert-meta">
                      <span class="concert-year">H15-Halmtorvet</span>
                     <span class="concert-year">Copenhagen</span>
-                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" class="concert-time">BUY TICKETS</a>
+                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" target="_blank" class="concert-time">BUY TICKETS</a>
                 </div>
             </div>
         </div>
@@ -47,8 +47,8 @@ import Layout from '../layouts/Layout.astro';
                 <h2 class="concert-name">05. Feb</h2>
                 <div class="concert-meta">
                      <span class="concert-year">Train</span>
-                    <span class="concert-year">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aarhus C</span>
-                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" class="concert-time">BUY TICKETS</a>
+                    <span class="concert-year">Aarhus C</span>
+                    <a href="https://www.ticketmaster.dk/musik/alle-musik/10001/events" target="_blank" class="concert-time">BUY TICKETS</a>
                 </div>
             </div>
         </div>
@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
 <style>
 
 .top-space{
-padding-top: 60px;
+padding-top: 35px;
 z-index: 30;
 }
 /* Container for the entire list */
@@ -79,8 +79,8 @@ z-index: 30;
     align-items: center;
     text-decoration: none;
     color: #fff;
-    border-bottom: 1px solid #fff; /* Adds the horizontal separator */
-    padding: 15px 30px;
+    border-bottom: 1px solid #fff; 
+    padding: 13px 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     z-index: 30;
 }
@@ -89,9 +89,9 @@ z-index: 30;
 .concert-info {
     display: flex;
     align-items: center;
-    flex: 1; /* Fills available space */
+    flex: 1; 
     justify-content: space-between;
-    font-family: "Imbue", serif;; /* Matches the font style in the image */
+    font-family: "Imbue", serif;; 
     z-index: 30;
 }
 
@@ -99,6 +99,7 @@ z-index: 30;
 .concert-name {
     font-size: 2rem;
     font-weight: bold;
+    padding-bottom: 20px;
     z-index: 30;
 }
 
@@ -106,14 +107,20 @@ z-index: 30;
 /* Song metadata container */
 .concert-meta {
     display: flex;
-    gap: 150px; /* Adds spacing between year and time */
-    flex: 1; /* Ensures metadata aligns to the right */
+    gap: 150px;
+    flex: 1; 
     justify-content: flex-end;
     font-size: 2rem;
     font-weight: bold;
     color: #fff; 
     z-index: 30;
 }
+ .concert-year {
+        margin-left: auto; 
+        margin-bottom: 0; 
+        align-items: start;
+        text-align: left;
+ }
 
 .concert-time{
     border: 5px solid #C22554;
@@ -131,35 +138,43 @@ z-index: 30;
     z-index: 20;
 }
 
+
 @media screen and (max-width: 768px) {
+    .concert-list{
+        max-width: 100%;
+    }    
     .concert-item {
         padding: 1px 20px;
+        padding-bottom: 30px;
     }
     .concert-info {
-        flex-direction: column; /* Stack name and metadata vertically */
+        flex-direction: column; 
         align-items: flex-start;
-        width: 100%; /* Ensure it spans the full width */
+        width: 100%; 
     }
 
    .concert-meta {
         display: flex;
-        align-items: center; /* Aligns items vertically */
-        justify-content: space-between; /* Distributes space evenly */
-        width: 100%; /* Ensures full-width alignment */
-        gap: 15px; /* Smaller gap for mobile view */
+        align-items: center; 
+        justify-content: space-between; 
+        width: 100%; 
+        gap: 15px; 
     }
 
     .concert-time {
-        margin-left: auto; /* Aligns the button to the right */
-        margin-bottom: 0; /* Ensures alignment with other elements */
-        font-size: 0.7rem; /* Mobile font size */
+        margin-left: auto; 
+        margin-bottom: 0; 
+        font-size: 0.7rem; 
     }
 
     .concert-name {
-        font-size: 0.7rem; /* Adjust font size for mobile readability */
+        font-size: 0.7rem; 
     }
 
     .concert-year {
+        margin-left: auto; 
+        margin-bottom: 0; 
+        align-items: start;
         font-size: 0.7rem;
         color: #ddd;
     }

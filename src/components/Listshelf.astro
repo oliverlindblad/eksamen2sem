@@ -37,15 +37,15 @@ import Layout from '../layouts/Layout.astro';
     align-items: center;
     text-decoration: none;
     color: #fff;
-    border-bottom: 1px solid #fff; /* Adds the horizontal separator */
-    padding: 15px 30px;
+    border-bottom: 1px solid #fff; 
+    padding: 13px 30px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     z-index: 30;
 }
 
 .song-item:hover {
-    transform: scale(1.02); /* Slightly enlarges the item */
+    transform: scale(1.02); 
     z-index: 30;
 }
 
@@ -55,8 +55,8 @@ import Layout from '../layouts/Layout.astro';
     width: 90px;
     height: 90px;
     object-fit: cover;
-    border-radius: 3px; /* Slight rounding for the image corners */
-    margin-right: 20px; /* Spacing between image and text */
+    border-radius: 3px; 
+    margin-right: 20px; 
     z-index: 30;
 }
 
@@ -64,9 +64,9 @@ import Layout from '../layouts/Layout.astro';
 .song-info {
     display: flex;
     align-items: center;
-    flex: 1; /* Fills available space */
+    flex: 1; 
     justify-content: space-between;
-    font-family: "Imbue", serif;; /* Matches the font style in the image */
+    font-family: "Imbue", serif;; 
     z-index: 30;
 }
 
@@ -81,8 +81,8 @@ import Layout from '../layouts/Layout.astro';
 /* Song metadata container */
 .song-meta {
     display: flex;
-    gap: 240px; /* Adds spacing between year and time */
-    flex: 1; /* Ensures metadata aligns to the right */
+    gap: 240px; 
+    flex: 1; 
     justify-content: flex-end;
     z-index: 30;
 }
@@ -91,7 +91,7 @@ import Layout from '../layouts/Layout.astro';
 .song-year, .song-time {
     font-size: 2rem;
     font-weight: bold;
-    color: #fff; /* Softer white for metadata */
+    color: #fff; 
     z-index: 30;
 }
 
@@ -104,21 +104,21 @@ import Layout from '../layouts/Layout.astro';
         width: 60px;
         height: 60px;
         margin-top: 2px; 
-        margin-bottom: 2px; /* Add spacing between the image and text */
+        margin-bottom: 2px; 
     }
 
     .song-info {
-        flex-direction: column; /* Stack name and metadata vertically */
+        flex-direction: column; 
         align-items: flex-start;
     }
 
     .song-meta {
-        justify-content: flex-start; /* Align year and time to the left */
-        gap: 120px; /* Add a little spacing between year and time */
+        justify-content: flex-start; 
+        gap: 120px; 
     }
 
     .song-name {
-        font-size: 0.7rem; /* Slightly increase font size for readability */
+        font-size: 0.7rem; 
     }
 
     .song-year, .song-time {
