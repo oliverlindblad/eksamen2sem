@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+
+<Layout>
+  <div class="headers">
+        <div class="logo">
+            <a href="/" class="logo-text">LOVEHITSHARD</a>
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="/">
+                        <p>HOMEPAGE</p>
+                    </a></li>
+                <li><a href="/songs">
+                        <p>MUSIC LIST</p>
+                    </a></li>
+                <li><a href="/concert">
+                        <p>SHOWS</p>
+                    </a></li>
+                     <li><a href="/aboutus">
+                        <p>ABOUT US</p>
+                    </a></li>
+
+            </ul>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </div>
+</Layout>
+
+<style>
+    /*************** Menu ****************/
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+  z-index: 30;
+}
+
+ .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none; 
+        z-index: 30;
+    }
+
+    .logo-text {
+        font-family: "Metal Mania", serif;
+        font-size: 6.6rem; 
+        font-weight: bold; 
+         text-decoration: none; 
+        color: #fff; 
+        letter-spacing: 4px; 
+        text-transform: uppercase; 
+        z-index: 30;
+    }
+
+
+nav {
+  display: flex;
+  align-items: center;
+  z-index: 30;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 30;
+}
+
+.menu li {
+  margin-right: 20px;
+  padding-top: 20px;
+  z-index: 30;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+  z-index: 30;
+}
+
+.menu a {
+  display: block;
+  padding: 10px;
+  font-family: "Metal Mania", serif;
+  color: #fff;
+   text-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+  text-decoration: none;
+  transition: color 0.3s;
+  text-align: end;
+  z-index: 30;
+}
+
+.menu a:hover {
+  color: #C22554;
+  z-index: 30;
+}
+
+.burger {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.burger .line {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: 0.2s linear;
+  z-index: 30;
+}
+.burger {
+  display: none;
+  z-index: 30;
+}
+
+@media screen and (max-width: 2000px) {
+  .menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: 0.2s linear;
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+    transition: 0.15s linear;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+    transition: 0.2s linear;
+     z-index: 30;
+  }
+
+  nav.active .menu {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+  }
+
+  nav.active .menu li {
+    margin: -20px 0px;
+     z-index: 30;
+  }
+
+  nav.active .menu a {
+    font-size: 20px;
+     z-index: 30;
+
+  }
+}
+@media screen and (max-width: 768px) {
+ .logo-text{
+             font-size: 2.5rem; 
+             z-index: 30;
+        }
+.menu li {
+  margin-right: 10px;
+  padding-top: 20px;
+  z-index: 30;
+}
+}
+</style>
+
+<script>
+    const burger = document.querySelector(".burger");
+const nav = document.querySelector("nav");
+const menu = document.querySelector(".menu");
+const links = document.querySelectorAll(".menu li a");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  nav.classList.toggle("active");
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    burger.classList.remove("active");
+    nav.classList.remove("active");
+  });
+});
+</script>

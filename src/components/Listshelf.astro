@@ -1,28 +1,130 @@
 ---
-const {data} = Astro.props;
-
+const { data } = Astro.props;
+import Layout from '../layouts/Layout.astro';
 ---
 
-<a href={`songs/${data.slug}`}>
-    <article>
-        <img src="" alt="billede" />
-        <h2>{data.name1}</h2>
-        <h3>{data.date}</h3>
-        <h4>{data.time}</h4>
-    </article>
-</a>
-
-
-
-
-   
-
-
-
+<Layout>
+    <div class="song-list">
+        <a href={`songs/${data.slug}`} class="song-item">
+            <img src=`https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/${data.image}` alt="billede" class="song-image" />
+            <div class="song-info">
+                <h2 class="song-name">{data.name1}</h2>
+                <div class="song-meta">
+                    <span class="song-year">{data.date}</span>
+                    <span class="song-time">{data.time}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</Layout>
 
 <style>
-	@media screen and (max-width: 768px) {
+/* Container for the entire list */
+.song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+    max-width: 80%;
+    margin: 0 auto;
+    z-index: 30;
+}
 
-	}
+/* Individual song item */
+.song-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px solid #fff; /* Adds the horizontal separator */
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    z-index: 30;
+}
+
+.song-item:hover {
+    transform: scale(1.02); /* Slightly enlarges the item */
+    z-index: 30;
+}
+
+
+/* Song image styling */
+.song-image {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 3px; /* Slight rounding for the image corners */
+    margin-right: 20px; /* Spacing between image and text */
+    z-index: 30;
+}
+
+/* Song information container */
+.song-info {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Fills available space */
+    justify-content: space-between;
+    font-family: "Imbue", serif;; /* Matches the font style in the image */
+    z-index: 30;
+}
+
+/* Song name */
+.song-name {
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 30;
+}
+
+
+/* Song metadata container */
+.song-meta {
+    display: flex;
+    gap: 240px; /* Adds spacing between year and time */
+    flex: 1; /* Ensures metadata aligns to the right */
+    justify-content: flex-end;
+    z-index: 30;
+}
+
+/* Song year and time */
+.song-year, .song-time {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* Softer white for metadata */
+    z-index: 30;
+}
+
+@media screen and (max-width: 768px) {
+    .song-item {
+        padding: 10px 10px;
+    }
+
+    .song-image {
+        width: 60px;
+        height: 60px;
+        margin-top: 2px; 
+        margin-bottom: 2px; /* Add spacing between the image and text */
+    }
+
+    .song-info {
+        flex-direction: column; /* Stack name and metadata vertically */
+        align-items: flex-start;
+    }
+
+    .song-meta {
+        justify-content: flex-start; /* Align year and time to the left */
+        gap: 120px; /* Add a little spacing between year and time */
+    }
+
+    .song-name {
+        font-size: 0.7rem; /* Slightly increase font size for readability */
+    }
+
+    .song-year, .song-time {
+        font-size: 0.7rem;
+        color: #ddd;
+    }
+}
 
 </style>
