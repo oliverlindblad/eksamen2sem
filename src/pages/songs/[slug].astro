@@ -49,7 +49,7 @@ export async function  getStaticPaths(){
     </div>
 
     <!-- Audio Player -->
-    <audio id="audio-player" controls autoplay>
+    <audio id="audio-player" controls controlslist="nodownload" style="width: 97%; height: 40px;">
         <source 
             src={`https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/${myData.sound}`} 
             type="audio/mpeg" 
@@ -285,6 +285,20 @@ audio {
 .artist-name {
     font-size: 1rem;
 }
+audio {
+    position: fixed; /* Fixed position for better visibility */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%);
+    width: 90%; /* Make it responsive */
+    max-width: 400px; /* Limit width for better appearance */
+    z-index: 9999;
+}
+audio {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+ 
 }
 
 </style>
