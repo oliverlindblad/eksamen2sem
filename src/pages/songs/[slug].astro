@@ -49,7 +49,7 @@ export async function  getStaticPaths(){
     </div>
 
     <!-- Audio Player -->
-    <audio id="audio-player" controls controlslist="nodownload" style="width: 97%; height: 40px;">
+    <audio id="audio-player" controls autoplay controlslist="nodownload" style="width: 97%; height: 40px;">
         <source 
             src={`https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/${myData.sound}`} 
             type="audio/mpeg" 
@@ -258,7 +258,7 @@ audio::-webkit-media-controls-volume-level {
 
 @media screen and (max-width: 768px) {
 .details {
-    bottom: 110px;
+    bottom: 200px;
     left: 45px;
 }
 .text {
