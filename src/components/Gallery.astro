@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <div class="messy_galleri">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede1.webp" loading="lazy" alt="billede1">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede2.webp" loading="lazy" alt="billede2">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede3.webp" loading="lazy" alt="billede3">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede4.webp" loading="lazy" alt="billede4">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede5.webp" loading="lazy" alt="billede5">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede6.webp" loading="lazy" alt="billede6">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede7.webp" loading="lazy" alt="billede7">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede8.webp" loading="lazy" alt="billede8">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede9.webp" loading="lazy" alt="billede9">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede10.webp" loading="lazy" alt="billede10">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede11.webp" loading="lazy" alt="billede11">
+        <img src="https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/billede12.webp" loading="lazy" alt="billede12">
+    </div>
+</Layout>
+
+<style>
+    /* Default Desktop Layout */
+    .messy_galleri {
+        position: relative;
+        height: 120vh; /* Gallery height for desktops */
+        max-width: 100%;
+        overflow: hidden;
+        margin: auto;
+    }
+
+    .messy_galleri img {
+        position: absolute;
+        width: 350px; /* Fixed width for images */
+        height: auto;
+        padding-top: 1rem;
+
+        transform: rotate(calc(-15deg + 30deg * random()));
+        transition: transform 0.2s ease;
+    }
+
+    /* Individual image positioning for desktops */
+    .messy_galleri img:nth-child(1) {
+        top: 5%;
+        left: 5%;
+        transform: rotate(-10deg);
+    }
+    .messy_galleri img:nth-child(2) {
+        top: 6%;
+        left: 30%;
+        transform: rotate(15deg);
+    }
+    .messy_galleri img:nth-child(3) {
+        top: 30%;
+        left: 20%;
+        transform: rotate(-5deg);
+    }
+    .messy_galleri img:nth-child(4) {
+        top: 34%;
+        left: 45%;
+        transform: rotate(8deg);
+    }
+    .messy_galleri img:nth-child(5) {
+        top: 55%;
+        left: 55%;
+        transform: rotate(-12deg);
+    }
+    .messy_galleri img:nth-child(6) {
+        top: 40%;
+        left: 1%;
+        transform: rotate(5deg);
+    }
+    .messy_galleri img:nth-child(7) {
+        top: 60%;
+        left: 5%;
+        transform: rotate(5deg);
+    }
+    .messy_galleri img:nth-child(8) {
+        top: 68%;
+        left: 60%;
+        transform: rotate(5deg);
+    }
+    .messy_galleri img:nth-child(9) {
+        top: 60%;
+        left: 82%;
+        transform: rotate(-12deg);
+    }
+    .messy_galleri img:nth-child(10) {
+        top: 60%;
+        left: 30%;
+        transform: rotate(5deg);
+    }
+    .messy_galleri img:nth-child(11) {
+        top: 5%;
+        left: 55%;
+        transform: rotate(-12deg);
+    }
+    .messy_galleri img:nth-child(12) {
+        top: 30%;
+        left: 70%;
+        transform: rotate(5deg);
+    }
+   
+
+    /* Hover effect for desktop interactivity */
+    .messy_galleri img:hover {
+        transform: scale(1.1) rotate(0deg);
+        z-index: 10;
+    }
+
+   /* Responsive Mobile Layout */
+@media screen and (max-width: 768px) {
+    .messy_galleri {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust to fit images dynamically */
+        gap: 1rem; 
+        height: auto; 
+        overflow: visible; 
+        max-width: 90%;
+    }
+
+    .messy_galleri img {
+        position: static; 
+        width: 100%; 
+        transform: none !important; 
+        transition: none; 
+    }
+
+    .messy_galleri img:hover {
+        transform: none !important; 
+    }
+}
+
+</style>
