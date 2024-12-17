@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
     <div class="song-list">
-        <a href={`songs/${data.slug}`} class="song-item">
+        <a href={`/songs/${data.slug}`} class="song-item">
             <img src=`https://gpibpwcilnnywtjvpwql.supabase.co/storage/v1/object/public/lovehitshardcovers/${data.image}` alt="billede" class="song-image" />
             <div class="song-info">
                 <h2 class="song-name">{data.name1}</h2>
