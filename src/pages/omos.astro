@@ -1,5 +1,6 @@
 ---
 import Gallery from '../components/Gallery.astro';
+import Footer from '../components/Footer.astro';
 import Menu from '../components/Menu.astro';
 import Layout from '../layouts/Layout.astro';
 ---
@@ -35,49 +36,7 @@ når der spilles live.
     
      </div>
 </section>
-
-<footer>
-     <div class="svg-container">
-        <a href="https://www.facebook.com/" class="svg" target="_blank">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M52.5599 87.4995H16.6394C14.3526 87.4995 12.5 85.6457 12.5 83.3598V16.6389C12.5 14.3524 14.3529 12.4995 16.6394 12.4995H83.3609C85.6468 12.4995 87.5 14.3524 87.5 16.6389V83.3598C87.5 85.646 85.6465 87.4995 83.3609 87.4995H64.2489V58.4554H73.9977L75.4574 47.1364H64.2489V39.9099C64.2489 36.6328 65.1589 34.3995 69.8583 34.3995L75.852 34.3969V24.2731C74.8154 24.1351 71.2575 23.827 67.118 23.827C58.4763 23.827 52.5599 29.1019 52.5599 38.7889V47.1364H42.7861V58.4554H52.5599V87.4995Z" fill="white"/>
-            </svg>
-            </a>
-            <a href="https://www.instagram.com/lovehitshard_official/" class="svg" target="_blank">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M50.0001 12.5005C39.8156 12.5005 38.5386 12.5437 34.5388 12.7262C30.5474 12.9082 27.8214 13.5422 25.4361 14.4693C22.9701 15.4275 20.8788 16.7097 18.7939 18.7944C16.7092 20.8793 15.427 22.9706 14.4688 25.4366C13.5417 27.8218 12.9077 30.5478 12.7257 34.5393C12.5432 38.5391 12.5 39.8161 12.5 50.0006C12.5 60.1849 12.5432 61.4619 12.7257 65.4617C12.9077 69.4531 13.5417 72.1791 14.4688 74.5644C15.427 77.0304 16.7092 79.1216 18.7939 81.2065C20.8788 83.2913 22.9701 84.5735 25.4361 85.5318C27.8214 86.4588 30.5474 87.0928 34.5388 87.2748C38.5386 87.4573 39.8156 87.5005 50.0001 87.5005C60.1844 87.5005 61.4614 87.4573 65.4612 87.2748C69.4526 87.0928 72.1786 86.4588 74.5639 85.5318C77.0299 84.5735 79.1212 83.2913 81.206 81.2065C83.2908 79.1216 84.573 77.0304 85.5314 74.5644C86.4583 72.1791 87.0923 69.4531 87.2743 65.4617C87.4568 61.4619 87.5 60.1849 87.5 50.0006C87.5 39.8161 87.4568 38.5391 87.2743 34.5393C87.0923 30.5478 86.4583 27.8218 85.5314 25.4366C84.573 22.9706 83.2908 20.8793 81.206 18.7944C79.1212 16.7097 77.0299 15.4275 74.5639 14.4693C72.1786 13.5422 69.4526 12.9082 65.4612 12.7262C61.4614 12.5437 60.1844 12.5005 50.0001 12.5005ZM50.0002 19.2598C60.013 19.2598 61.1991 19.298 65.1533 19.4784C68.8095 19.6452 70.7951 20.2561 72.1165 20.7696C73.8669 21.4499 75.1161 22.2625 76.4283 23.5748C77.7406 24.887 78.5532 26.1362 79.2335 27.8866C79.747 29.208 80.358 31.1936 80.5247 34.8498C80.7051 38.804 80.7433 39.9901 80.7433 50.0031C80.7433 60.0159 80.7051 61.202 80.5247 65.1562C80.358 68.8125 79.747 70.7981 79.2335 72.1195C78.5532 73.8699 77.7406 75.1191 76.4283 76.4312C75.1161 77.7436 73.8669 78.5562 72.1165 79.2364C70.7951 79.75 68.8095 80.3609 65.1533 80.5276C61.1997 80.708 60.0137 80.7463 50.0002 80.7463C39.9864 80.7463 38.8006 80.708 34.8469 80.5276C31.1907 80.3609 29.2051 79.75 27.8837 79.2364C26.1333 78.5562 24.8841 77.7436 23.5719 76.4312C22.2597 75.1191 21.447 73.8699 20.7667 72.1195C20.2531 70.7981 19.6422 68.8125 19.4755 65.1562C19.2951 61.202 19.2568 60.0159 19.2568 50.0031C19.2568 39.9901 19.2951 38.804 19.4755 34.8498C19.6422 31.1936 20.2531 29.208 20.7667 27.8866C21.447 26.1362 22.2596 24.887 23.5719 23.5748C24.8841 22.2625 26.1333 21.4499 27.8837 20.7696C29.2051 20.2561 31.1907 19.6452 34.8469 19.4784C38.8011 19.298 39.9872 19.2598 50.0002 19.2598ZM30.7432 49.9987C30.7432 39.3633 39.3646 30.7418 50 30.7418C60.6352 30.7418 69.2567 39.3633 69.2567 49.9987C69.2567 60.6339 60.6352 69.2553 50 69.2553C39.3646 69.2553 30.7432 60.6339 30.7432 49.9987ZM50.0001 62.5011C43.0964 62.5011 37.5 56.9047 37.5 50.0012C37.5 43.0975 43.0964 37.5011 50.0001 37.5011C56.9036 37.5011 62.5 43.0975 62.5 50.0012C62.5 56.9047 56.9036 62.5011 50.0001 62.5011ZM70.017 34.4854C72.5023 34.4854 74.5171 32.4708 74.5171 29.9855C74.5171 27.5002 72.5023 25.4854 70.017 25.4854C67.5319 25.4854 65.5171 27.5002 65.5171 29.9855C65.5171 32.4708 67.5319 34.4854 70.017 34.4854Z" fill="white"/>
-            </svg>
-            </a>
-        <a href="https://soundcloud.com/lovehitshard" class="svg" target="_blank">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect width="100" height="100" fill="url(#pattern0_142_993)"/>
-            <defs>
-            <pattern id="pattern0_142_993" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image0_142_993" transform="scale(0.01)"/>
-            </pattern>
-            <image id="image0_142_993" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADEElEQVR4nO3cPWsUURTG8RPfETuxEBQbsQmCpa2CxggqAfVThBSCWEgkhYg2prLQT2BAUEECgi9o0E6jYqGikkajIr5E0SjoX65Owp1NFjLr7M7Zvc+v2hzI7tzzZO7dvTMbMxERERERERERERERERERERERMTNgObALGAIuAk+AN8B34CfwAXgKXAFOALuBVWpeyYBtwHlgiuK+ASNAD9ClcP4viL3APcrzENinUAoCNgKjNM9VYEPR40oScKDBqamoT8DBqsfrGv8W4t+0TnitY1WP2x2gCximOsNV98AV4DjVG6y6Dy4AfS2epuoJx9BnqQM+48dHYJ11EuAy8Bh4D/yI6q+AS8AhYFNU92bU2hWwGNgP3I1qOUXrTvRau8m2Ih7NjCCq5xStOzFu7aZ2BGXVHdlu3gGro8c5ZdUdGTHPgDVhiop+zimr7shXYKV5BKwIC3c4yqiWU1bdmT3mEXBm5gijWk5ZdWdOmjdhcYs/SUf1nLLqzlw3b4AH8RFGdZpRd2bCvKk9wmbXnfmVXSibyC4Fh+v2b4E7wClgK7BIgfgStoQGgGVl/PVviR5Pxi+iM6Sw5w1vuWT7T3/Xhqoab3XqbS5McUca2Y2dpUCa4lyRQHK81TtI/TMl3iir/S1v9Q6bvuauKcB64J23xlvnBxK8DLe/1gZy02PjLY1AgoE4jHCzscvGWzqBvAaWzAx23GvjLZ1Agp4w0M2eG29pBXI6DHTQc+MtrUDGwkCveW68pRXIpGXfJHLbeEsrkOkw0C+eG28JBjLlufGW4JQVvhDptvGWViC3tag7fNt71POZYGmdITvDQLs9N94S3Tq577Xxlk4g/RYNttdr4y2NQF7MufkBuOGx8ZbGBaqeXBjZgNeGecxb463zAzk8J4xo0LqE21pn64YxTzg53uptLtwDPbTgMLIGXIifQYGU5tm8a8YCQ9kB3ArPokBK+ZzRDyxtKIyaYLqjx+Ee1VlVBeXcdPYP08bCdkj4BB6+ifzfQYiIiIiIiIiIiIiIiIiIiIiIiIiIiIi1yh86+eiVYXrxDQAAAABJRU5ErkJggg=="/>
-            </defs>
-            </svg>
-            </a>
-        <a href="https://open.spotify.com/artist/0I4QYEdFKnRDWft67BvRCf" class="svg" target="_blank">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect width="100" height="100" fill="url(#pattern0_142_992)"/>
-            <defs>
-            <pattern id="pattern0_142_992" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlink:href="#image0_142_992" transform="scale(0.01)"/>
-            </pattern>
-            <image id="image0_142_992" width="100" height="100" xlink:href="data:image/png;base64,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"/>
-            </defs>
-            </svg>
-            </a>
-        <a href="https://www.youtube.com/channel/UCMNeRkBESlb38hpjCFTrXLQ" class="svg" target="_blank">
-        <svg  width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M83.7687 29.0403C86.0164 31.3772 86.75 36.6838 86.75 36.6838C86.75 36.6838 87.5 42.9171 87.5 49.1479V54.9913C87.5 61.2245 86.75 67.4554 86.75 67.4554C86.75 67.4554 86.0164 72.7621 83.7687 75.0989C81.199 77.8634 78.3497 78.149 76.7391 78.3105C76.562 78.3282 76.3998 78.3445 76.2547 78.3623C65.7594 79.1421 50 79.1662 50 79.1662C50 79.1662 30.5 78.9833 24.5 78.3912C24.2157 78.3367 23.8711 78.2943 23.4809 78.2462C21.5803 78.0121 18.5973 77.6447 16.2289 75.0989C13.9813 72.7621 13.25 67.4554 13.25 67.4554C13.25 67.4554 12.5 61.2245 12.5 54.9913V49.1479C12.5 42.9171 13.25 36.6838 13.25 36.6838C13.25 36.6838 13.9813 31.3772 16.2289 29.0403C18.8044 26.2719 21.6564 25.9894 23.2671 25.8298C23.4418 25.8125 23.6018 25.7967 23.7453 25.7793C34.2406 24.9995 49.9836 24.9995 49.9836 24.9995H50.0164C50.0164 24.9995 65.7594 24.9995 76.2547 25.7793C76.3982 25.7967 76.5583 25.8126 76.7331 25.8299C78.3426 25.9895 81.1958 26.2724 83.7687 29.0403ZM42.2549 40.4327L42.2572 62.0709L62.5189 51.2891L42.2549 40.4327Z" fill="white"/>
-            </svg>
-            </a>
-        </div>  
-        </footer>
-
+<Footer/>
 </Layout>
 
 
@@ -135,41 +94,6 @@ iframe {
     padding-top: 1rem;
 }
 
-/* SVG Styling */
-.svg-container {
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    z-index: 30;
-}
-
-.svg {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    padding: 1.5vw; /* Adjust padding relative to screen width */
-    width: 6vw; /* Set width relative to viewport width */
-    height: 6vw; /* Maintain square shape */
-    transition: background 0.3s;
-    display: flex; /* Align content (e.g., SVG icon) inside */
-    justify-content: center;
-    align-items: center;
-    z-index: 30;
-    max-width: 60px; /* Limit size on larger screens */
-    max-height: 60px;
-}
-
-.svg img {
-    width: 100%; /* Ensure SVG or image scales properly */
-    height: 100%;
-}
-
-.svg:hover {
-    background: rgba(255, 255, 255, 0.3);
-    cursor: pointer;
-}
-
 /* Responsive Design */
 
 /* Tablets (max-width: 1024px) */
@@ -221,16 +145,7 @@ iframe {
         margin-left: 1rem;
         margin-right: 1rem;
     }
-    .svg-container{
-        gap: 25px;
-    }
- .svg {
-        width: 8vw; 
-        height: 8vw;
-        padding: 2vw;
-        max-width: 20px; 
-        max-height: 20px;
-    }
+
 }
 
 /* Small Mobile Devices (max-width: 480px) */
